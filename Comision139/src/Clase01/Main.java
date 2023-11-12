@@ -13,13 +13,14 @@ class Inmueble {
     static int valorMinimo = 100;
 }
 
-class Casa {
+class Casa extends Inmueble {
     static int valorMinimo = 100; // Nueva instancia de valorMinimo para Casa
 }
 
-class PH {
+class PH extends Inmueble {
     static int valorMinimo = 100; // Nueva instancia de valorMinimo para PH
 }
+
 
 public class Main {
     public static void main(String[] args) {
