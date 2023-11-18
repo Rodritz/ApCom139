@@ -1,15 +1,26 @@
 package com.argentinaPrograma.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "problema")
 public class Problema {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "problemaId")
     private Long id;
-    private String nombre;
+
+    private String descripcion;
+
+    @OneToOne(mappedBy = "problema", cascade = CascadeType.ALL)
+    private Incidente incidente;
+
+    @Column(name = "complejidad")
     private boolean esComplejo;
+
 }
